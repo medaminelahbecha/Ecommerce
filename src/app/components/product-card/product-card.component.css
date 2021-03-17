@@ -1,0 +1,11 @@
+.card-footer {
+    background-color: white;
+    line-height: 35px;
+    height: 38px;
+}
+
+.card {
+    width: 18rem;
+    height: 500px;
+    margin: 3mm;
+}

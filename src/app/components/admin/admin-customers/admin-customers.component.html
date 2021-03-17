@@ -1,0 +1,32 @@
+<div class="container-fluid">
+    <h1 class="display-6"> Customers</h1>
+    <hr>
+    <div class="search-hero">
+        <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Start searching for a costumer">
+    </div>
+    <br>
+    <br>
+    <table class="table">
+
+        <thead style="background-color:slategray">
+            <tr>
+                <th>.Sno</th>
+                <th>Customer Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>User Type</th>
+                <th>Registred Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let user of (users$|async)| filter:searchText;index as i'>
+                <td>{{i+1}} </td>
+                <td>{{user.name}} </td>
+                <td>{{user.email}} </td>
+                <td>{{user.phone}} </td>
+                <td>{{user.userType}} </td>
+                <td>{{user.created_at | date}} </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

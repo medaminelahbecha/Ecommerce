@@ -1,0 +1,19 @@
+<div class="text-center mt-4">
+    <form class="form-signin border rounded" (submit)='signup($event)'>
+        <img class="mb-4" src="assets/cart.jpg" alt="" width="72" height="72">
+        <h1 class="h3 mb-3 font-weight-normal">Create Your E-Shop Account</h1>
+        <hr>
+        <p *ngIf='error' class="alert alert-danger">{{error}}</p>
+        <p *ngIf='success' class="alert alert-danger">{{success}}</p>
+
+        <input type="text" id="name" class="form-control mb-2" placeholder="your name" name="name" required autofocus>
+        <input type="email" id="inputEmail" class="form-control mb-2" placeholder="Email address" name="email" required
+            autofocus>
+
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control mb-2" placeholder="Password" name="password" required>
+        <input type="number" id="phone" class="form-control mb-2" placeholder="phone" name="phone" required>
+
+        <button  class="btn btn-lg btn-light border rounded btn-block mt-3" type="submit">Create Account</button>
+    </form>
+</div>

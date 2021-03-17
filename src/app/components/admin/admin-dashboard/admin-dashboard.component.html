@@ -1,0 +1,56 @@
+<div class="container-fluid p-1 p1-4 m-2 border rounded">
+    <h1 class="display-6">Last 30 Days Summary</h1>
+    <hr>
+
+    <div class="row mx-auto p-3">
+        <div class="col">
+            <admin-dashboard-card [colors]="colors.a" [value]='users30'>Costumers Registered</admin-dashboard-card>
+        </div>
+        <div class="col">
+            <admin-dashboard-card [colors]="colors.b" [value]='order30'>Order</admin-dashboard-card>
+        </div>
+        <div class="col">
+            <admin-dashboard-card [colors]="colors.c" [value]='sales30'>Sale</admin-dashboard-card>
+        </div>
+
+    </div>
+    <hr>
+    <h1 class="display-6">Over All</h1>
+    <hr>
+
+    <div class="row mx-auto p-3">
+        <div class="col">
+            <admin-dashboard-card [colors]="colors.c" [value]='totalProduct'>Product</admin-dashboard-card>
+        </div>
+        <div class="col">
+            <admin-dashboard-card [colors]="colors.b" [value]='ordersTotal'>Orders</admin-dashboard-card>
+        </div>
+        <div class="col">
+            <admin-dashboard-card [colors]="colors.a" [value]='usersTotal'>Costumers</admin-dashboard-card>
+        </div>
+    </div>
+
+    <div class="border rounded p-3 mt-2">
+        <div class="row float-right">
+            <button class="btn btn-light border m-2" (click)='changeChart("line")'>Line Chart </button>
+            <button class="btn btn-light border m-2" (click)='changeChart("bar")'>Bar Chart </button>
+        </div>
+        <div>
+            <div>
+                <div style="display: block;">
+                    <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+            </canvas>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+</div>
+
+<br>
+<br>
+<br>
+<br>
